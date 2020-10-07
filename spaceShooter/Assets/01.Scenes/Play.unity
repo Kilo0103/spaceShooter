@@ -493,21 +493,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198393015}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d0c6c701ceeeba4abb320b8dd300f04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tr: {fileID: 0}
-  moveSpeed: 9
-  rotSpeed: 80
-  playerAnim:
-    idle: {fileID: 7400000, guid: df787a42d52d64ff4b908f7a344d499e, type: 2}
-    runF: {fileID: 7400000, guid: 185c4b4f1e1c1441d920959e7dee49a5, type: 2}
-    runB: {fileID: 7400000, guid: 777be73b9098940d086517b3fe6beb8a, type: 2}
-    runL: {fileID: 7400000, guid: 268781a61383b42a98eeda538dfa52e9, type: 2}
-    runR: {fileID: 7400000, guid: f65e8694646404294b2de66b5827d6e5, type: 2}
-  anim: {fileID: 198393017}
 --- !u!111 &198393017 stripped
 Animation:
   m_CorrespondingSourceObject: {fileID: 11100000, guid: f3cd25b3bf53c4adaaf087d862e435e6,
@@ -547,6 +537,64 @@ LODGroup:
     renderers:
     - renderer: {fileID: 540596205}
   m_Enabled: 1
+--- !u!114 &198393020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198393015}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7807dfdd9daf60441858feb9de48c2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tr: {fileID: 0}
+  moveSpeed: 9
+  rotSpeed: 80
+--- !u!114 &198393021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198393015}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 244a6519ed46b9e4fb032de2435e1ab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tr: {fileID: 0}
+  moveSpeed: 9
+  rotSpeed: 80
+  playerAnim:
+    idle: {fileID: 7400000, guid: df787a42d52d64ff4b908f7a344d499e, type: 2}
+    runF: {fileID: 7400000, guid: 185c4b4f1e1c1441d920959e7dee49a5, type: 2}
+    runB: {fileID: 7400000, guid: 777be73b9098940d086517b3fe6beb8a, type: 2}
+    runL: {fileID: 7400000, guid: 268781a61383b42a98eeda538dfa52e9, type: 2}
+    runR: {fileID: 7400000, guid: f65e8694646404294b2de66b5827d6e5, type: 2}
+  anim: {fileID: 198393017}
+--- !u!114 &198393022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198393015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf15e0b391fa64747931e91c24a539a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: 7400000, guid: df787a42d52d64ff4b908f7a344d499e, type: 2}
+  runF: {fileID: 7400000, guid: 185c4b4f1e1c1441d920959e7dee49a5, type: 2}
+  runB: {fileID: 7400000, guid: 777be73b9098940d086517b3fe6beb8a, type: 2}
+  runL: {fileID: 7400000, guid: 268781a61383b42a98eeda538dfa52e9, type: 2}
+  runR: {fileID: 7400000, guid: f65e8694646404294b2de66b5827d6e5, type: 2}
+  tr: {fileID: 0}
+  moveSpeed: 9
+  rotSpeed: 80
+  anim: {fileID: 198393017}
 --- !u!1 &282840810
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +637,7 @@ MonoBehaviour:
   targetTr: {fileID: 1440628344}
   dist: 2.4
   height: 0.6
-  dampTrace: 20
+  dampTrace: 55
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0

@@ -2,11 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCtrl : MonoBehaviour
-{ 
-
-}
-/*
 [System.Serializable]
 public class PlayerAnim
 {
@@ -17,7 +12,7 @@ public class PlayerAnim
     public AnimationClip runR;
 }
 
-public class PlayerCtrl : MonoBehaviour
+public class PlayCtrl_2 : MonoBehaviour
 {
 
     private float h = 0.0f;
@@ -55,7 +50,7 @@ public class PlayerCtrl : MonoBehaviour
         h = Input.GetAxis("Horizontal"); //h (수평의) 이동 입력값을 불러옴
         v = Input.GetAxis("Vertical");   //V (수직의) 이동 입력값을 불러옴
         r = Input.GetAxis("Mouse X");    //r (마우스) 의 값을 불러옴
-        
+
 
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
 
@@ -93,4 +88,3 @@ public class PlayerCtrl : MonoBehaviour
 
     }
 }
-*/
