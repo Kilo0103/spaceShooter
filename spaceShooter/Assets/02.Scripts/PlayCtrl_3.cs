@@ -53,9 +53,11 @@ public class PlayCtrl_3 : MonoBehaviour
         //tr.Rotate(Y축을 기준으로 * 회전 속도 * Time.deltaTime * 마우스);
         tr.Rotate(Vector3.up * rotSpeed * Time.deltaTime * r);
 
+        /*
         Debug.Log("h =" + h.ToString()); //디버그 창에 h 값을 출력
         Debug.Log("v =" + v.ToString()); //디버그 창에 v 값을 출력
         Debug.Log("r =" + r.ToString()); //디버그 창에 v 값을 출력
+        */
 
         if (v >= 0.0001f) //민감하게 변경했습니다.
         {
