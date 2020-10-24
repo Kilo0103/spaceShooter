@@ -16,6 +16,13 @@ public class BarrelCtrl : MonoBehaviour
     private int hitCount = 0;
     private Rigidbody rb;
     public Texture[] textures;
+
+    //폭발 반경
+    public float expRadius = 10.0f;
+    //폭발음 오디오 클립
+    public AudioClip expSfx;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,16 +35,16 @@ public class BarrelCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnCollisionEnter(Collision coll)
     {
         //충돌시 태그확인
-        if(coll.collider.CompareTag("BULLET")) // coll.collider.tag ==
+        if (coll.collider.CompareTag("BULLET")) // coll.collider.tag ==
         {
             //총알의 충돌 횟수가 3발인지 체크
-            if(++hitCount == 3)
+            if (++hitCount == 3)
             {
                 ExpBarrel();
             }
@@ -45,17 +52,28 @@ public class BarrelCtrl : MonoBehaviour
     }
     void ExpBarrel()
     {
-        Instantiate(expEffect, transform.position, Quaternion.identity);
+        //폭발 효과 프리팹을 동적으로 생성
+        GameObject effect = Instantiate(expEffect, transform.position, Quaternion.identity);
         //Destroy(effect, 2.0f);
-        Destroy(expEffect, 2.0f);
+        Destroy(effect, 2.0f);
         //Rigidbody 컴포넌트의 mass를 1.0으로 수정해 무게를 가볍게 함
-        rb.mass = 2.0f;
-        //위로 솟구치는 힘을 갛함
+        rb.mass = 5.0f;
+        //위로 솟구치는 힘을 가함
         rb.AddForce(Vector3.up * 1000.0f);
+        //폭발력 생성
+        IndirectDamage(transform.position);
         //난수를 발생시킴
         int idx = Random.Range(0, meshes.Length);
         //찌그러진 메쉬를 적용
         meshFilter.sharedMesh = meshes[idx];
         GetComponent<MeshCollider>().sharedMesh = meshes[idx];
     }
+
+    void IndirectDamage(Vector3 pos)
+    {
+        //구 범위로 주변에 있는 드럼통을 찾아 변수에 저장(?)
+        //Collider[] colls = Physics.OverlapSphere(pos, expRadius, 1 << 8);
+        Collider[] colls = Physics.OverlapSphere(pos, expRadius);
+    }
+    
 }
