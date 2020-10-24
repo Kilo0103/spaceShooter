@@ -243,7 +243,7 @@ PrefabInstance:
     - target: {fileID: 6714761927973033363, guid: 9c67c2bbba1e0c24dbb84fbfe6d7744f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.542051
+      value: 24.542
       objectReference: {fileID: 0}
     - target: {fileID: 6714761927973033363, guid: 9c67c2bbba1e0c24dbb84fbfe6d7744f,
         type: 3}
@@ -310,26 +310,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3971531126594321511, guid: 7b7f8035712813144abf27972e524f7c,
-        type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3971531126594321511, guid: 7b7f8035712813144abf27972e524f7c,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4564592070820266145, guid: 7b7f8035712813144abf27972e524f7c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4564592070820266145, guid: 7b7f8035712813144abf27972e524f7c,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4564592070820266147, guid: 7b7f8035712813144abf27972e524f7c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1222,26 +1202,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3971531126594321511, guid: 7b7f8035712813144abf27972e524f7c,
-        type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3971531126594321511, guid: 7b7f8035712813144abf27972e524f7c,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4564592070820266145, guid: 7b7f8035712813144abf27972e524f7c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4564592070820266145, guid: 7b7f8035712813144abf27972e524f7c,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4564592070820266147, guid: 7b7f8035712813144abf27972e524f7c,
         type: 3}
       propertyPath: m_LocalPosition.x
