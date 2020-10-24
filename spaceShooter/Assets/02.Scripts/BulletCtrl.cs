@@ -13,6 +13,8 @@ public class BulletCtrl : MonoBehaviour
     {
         //GetComponent<Rigidbody>().AddForce(transform.forward * speed); //글로벌 좌표 기준 앞으로
         GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * speed); // 로컬 기준 앞으로
+
+        Destroy(this.gameObject, 10.0f);
     }
 
     // Update is called once per frame

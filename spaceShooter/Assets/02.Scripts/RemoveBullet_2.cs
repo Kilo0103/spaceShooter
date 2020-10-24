@@ -2,29 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RemoveBullet : MonoBehaviour
+public class RemoveBullet_2 : MonoBehaviour
 {
     //스파크 프리팹을 저장할 변수
     public GameObject sparkEffect;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnCollisionEnter(Collision coll)
     {
-        if(coll.collider.tag == "BULLET")
+        if (coll.collider.tag == "BULLET")
         {
             //스파크 효과 함수 호출
             ShowEffect(coll);
             //충돌한 게임오브젝트 삭제
-            Destroy(coll.gameObject);
+            Destroy(coll.gameObject,1.0f);
         }
     }
     void ShowEffect(Collision coll)

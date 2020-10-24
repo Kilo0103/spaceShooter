@@ -2,7 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayCtrl_1 : MonoBehaviour
+[System.Serializable]
+public class PlayerAnim
+{
+    public AnimationClip idle;
+    public AnimationClip runF;
+    public AnimationClip runB;
+    public AnimationClip runL;
+    public AnimationClip runR;
+}
+
+public class PlayCtrl : MonoBehaviour
 {
 
     private float h = 0.0f;
@@ -15,12 +25,23 @@ public class PlayCtrl_1 : MonoBehaviour
     //회전 변수
     public float rotSpeed = 80.0f;
 
+    // 인스펙터 뷰에 표시할 애니메이션 클래스 변수
+    public PlayerAnim playerAnim;
+
+    //Animation 컴포넌트를 저장하기 위한 변수
+    public Animation anim;
+
     // Start is called before the first frame update
     void Start()
     {
         //tr 변수에 Transform컴포넌트 할당
         tr = GetComponent<Transform>();
 
+        //Animation 컴포넌트를 변수에 할당
+        anim = GetComponent<Animation>();
+        //Animation 컴포넌트의 애니메이션 클립을 지정하고 실행
+        anim.clip = playerAnim.idle;
+        anim.Play();
     }
 
     // Update is called once per frame
@@ -41,6 +62,29 @@ public class PlayCtrl_1 : MonoBehaviour
 
         Debug.Log("h =" + h.ToString()); //디버그 창에 h 값을 출력
         Debug.Log("v =" + v.ToString()); //디버그 창에 v 값을 출력
-        Debug.Log("r =" + r.ToString()); //디버그 창에 v 값을 출력 
+        Debug.Log("r =" + r.ToString()); //디버그 창에 v 값을 출력
+
+        if (v >= 0.0001f) //민감하게 변경했습니다.
+        {
+            anim.CrossFade(playerAnim.runF.name, 0.3f); //전진
+        }
+        else if (v <= -0.0001f)
+        {
+            anim.CrossFade(playerAnim.runB.name, 0.3f); //후진
+        }
+        else if (h >= 0.0001f)
+        {
+            anim.CrossFade(playerAnim.runR.name, 0.3f); //오른쪽
+        }
+        else if (h <= -0.0001f)
+        {
+            anim.CrossFade(playerAnim.runL.name, 0.3f); //왼쪽
+        }
+        else
+        {
+            anim.CrossFade(playerAnim.idle.name, 0.3f); //대기
+        }
+
+
     }
 }
