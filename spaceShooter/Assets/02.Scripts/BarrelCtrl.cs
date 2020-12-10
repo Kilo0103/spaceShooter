@@ -11,6 +11,9 @@ public class BarrelCtrl : MonoBehaviour
     //MeshRenderer 컴포넌트를 저장할 변수
     private MeshRenderer _renderer;
 
+    //AudioSource 컴포넌트를 저장할 변수
+    private AudioSource _audio;
+
     //폭발 효과 프리팹을 저장할 변수
     public GameObject expEffect;
     private int hitCount = 0;
@@ -30,6 +33,7 @@ public class BarrelCtrl : MonoBehaviour
         meshFilter = GetComponent<MeshFilter>();
         _renderer = GetComponent<MeshRenderer>();
         _renderer.material.mainTexture = textures[Random.Range(0, textures.Length)];
+        _audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -66,6 +70,7 @@ public class BarrelCtrl : MonoBehaviour
         //찌그러진 메쉬를 적용
         meshFilter.sharedMesh = meshes[idx];
         GetComponent<MeshCollider>().sharedMesh = meshes[idx];
+        
     }
 
     void IndirectDamage(Vector3 pos)
@@ -86,5 +91,7 @@ public class BarrelCtrl : MonoBehaviour
                 _rb.AddExplosionForce(1200.0f, pos, expRadius, 1000.0f);
             }
         }
+        //폭발음 발생
+        _audio.PlayOneShot(expSfx, 1.0f);
     }
 }
