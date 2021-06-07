@@ -72,7 +72,7 @@ public class MoveAgent : MonoBehaviour {
         agent.updateRotation = false;
 
         agent.speed = patrolSpeed;
-
+        /*
         var pObj = new GameObject();
         pObj.name = "wayPointGroup"; // 부모격 오브젝트 하나 생성
         var randomRange = Random.Range(4, 9);
@@ -82,7 +82,7 @@ public class MoveAgent : MonoBehaviour {
             newObj.name = "Point";
             newObj.transform.parent = pObj.transform;
             newObj.transform.position = new Vector3(Random.Range(-23.0f, 23.0f), 0, Random.Range(-23.0f, 23.0f));
-        }
+        }*/
 
         //하이러키 뷰의 WayPointGroup 게임오브젝트를 추출
         var group = GameObject.Find("WayPointGroup");

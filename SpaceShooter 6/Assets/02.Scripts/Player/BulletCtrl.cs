@@ -8,8 +8,39 @@ public class BulletCtrl : MonoBehaviour
     //총알 발사 속도
     public float speed = 1000.0f;
 
+    private Transform tr;
+    private Rigidbody rb;
+    private TrailRenderer trail;
+
+    private void Awake()
+    {
+        tr = GetComponent<Transform>();
+        rb = GetComponent<Rigidbody>();
+        trail = GetComponent<TrailRenderer>();
+
+        damage = GameManager.isnt.gameData.damage;
+    }
+
+    private void OnEnable()
+    {
+        rb.AddForce(transform.forward * speed);
+        GameManager.OnItemChange += UpdateSetup;
+    }
+
+    private void OnDisable()
+    {
+        trail.Clear();
+        tr.position = Vector3.zero;
+        tr.rotation = Quaternion.identity;
+        rb.Sleep();
+    }
+    void UpdateSetup()
+    {
+        damage = GameManager.isnt.gameData.speed;
+    }
+
     void Start()
     {
-        GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+        //GetComponent<Rigidbody>().AddForce(transform.forward * speed);
     }
 }
